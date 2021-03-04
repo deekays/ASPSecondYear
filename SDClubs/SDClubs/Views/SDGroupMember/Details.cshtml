@@ -1,0 +1,42 @@
+﻿@model SDClubs.Models.GroupMember
+
+@{
+    ViewData["Title"] = "Details of " + ViewBag.memName + " in " + ViewBag.name;
+}
+
+<h1>Details of @ViewBag.memName in @ViewBag.name</h1>
+
+<div>
+    <h4>GroupMember</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DateJoined)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DateJoined)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DateLeft)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DateLeft)
+        </dd>
+        <dt class = "col-sm-2">
+            Group
+        </dt>
+        <dd class="col-sm-10">
+            @ViewBag.name
+        </dd>
+        <dt class = "col-sm-2">
+            Member
+        </dt>
+        <dd class = "col-sm-10">
+            @ViewBag.memName
+        </dd>
+    </dl>
+</div>
+<div>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    <a asp-action="Index">Back to List</a>
+</div>

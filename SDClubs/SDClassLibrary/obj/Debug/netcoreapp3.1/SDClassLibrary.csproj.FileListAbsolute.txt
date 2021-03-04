@@ -1,0 +1,9 @@
+D:\Conestoga\ASP\Assignments\Assignment Four\SDClubs\SDClassLibrary\bin\Debug\netcoreapp3.1\SDClassLibrary.deps.json
+D:\Conestoga\ASP\Assignments\Assignment Four\SDClubs\SDClassLibrary\bin\Debug\netcoreapp3.1\SDClassLibrary.dll
+D:\Conestoga\ASP\Assignments\Assignment Four\SDClubs\SDClassLibrary\bin\Debug\netcoreapp3.1\SDClassLibrary.pdb
+D:\Conestoga\ASP\Assignments\Assignment Four\SDClubs\SDClassLibrary\obj\Debug\netcoreapp3.1\SDClassLibrary.csprojAssemblyReference.cache
+D:\Conestoga\ASP\Assignments\Assignment Four\SDClubs\SDClassLibrary\obj\Debug\netcoreapp3.1\SDClassLibrary.AssemblyInfoInputs.cache
+D:\Conestoga\ASP\Assignments\Assignment Four\SDClubs\SDClassLibrary\obj\Debug\netcoreapp3.1\SDClassLibrary.AssemblyInfo.cs
+D:\Conestoga\ASP\Assignments\Assignment Four\SDClubs\SDClassLibrary\obj\Debug\netcoreapp3.1\SDClassLibrary.csproj.CoreCompileInputs.cache
+D:\Conestoga\ASP\Assignments\Assignment Four\SDClubs\SDClassLibrary\obj\Debug\netcoreapp3.1\SDClassLibrary.dll
+D:\Conestoga\ASP\Assignments\Assignment Four\SDClubs\SDClassLibrary\obj\Debug\netcoreapp3.1\SDClassLibrary.pdb

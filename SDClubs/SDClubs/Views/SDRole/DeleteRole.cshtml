@@ -1,0 +1,35 @@
+﻿@using Microsoft.AspNetCore.Http
+
+@{
+    ViewData["Title"] = "Removing " + Context.Session.GetString("role");
+}
+
+<h1>Do you want to remove @Context.Session.GetString("role")?</h1>
+
+<h2>These users are currently in @Context.Session.GetString("role"), are you sure you want to delete?</h2>
+<form>
+    <input type="submit" asp-action="Delete" value="Delete away!" /><input type="submit" asp-action="Index" value="Return to Index" />
+</form>
+<br />
+
+<table class="table">
+    <tr>
+        <th>
+            User Name
+        </th>
+        <th>
+            Email
+        </th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @item.UserName
+            </td>
+            <td>
+                @item.Email
+            </td>
+        </tr>
+    }
+</table>

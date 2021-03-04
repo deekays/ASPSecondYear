@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <title>@ViewData["Title"] - Stephen's Kicking Database</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <style>
+        .right {
+            float: right;
+            margin-top: -.5em;
+        }
+
+
+    </style>
+</head>
+<body>
+    <header>
+        
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container">
+                <img style="height:100px;float:left;" src="~/images/club.png" />
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Database Home</a>
+                    @if (User.IsInRole("administrators"))
+                    {
+                        <div class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown">User/Role Maintenance</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" asp-controller="SDRole" asp-action="Index">Role Maintenance</a>
+                            </div>
+                        </div>
+                    }
+
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                        <partial name="_LoginPartial" />
+
+                    </div>
+                </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            <h3 style="color: red; font-weight:bold">@TempData["Message"]</h3>
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            <a href="mailto: sdraper6452@conestogac.on.ca">Stephen Draper</a> Section Four
+            <div class="right">
+                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+            </div>
+            <div class="right">
+                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            </div>
+            <div class="right">
+                <a class="nav-link text-dark" asp-area="" asp-controller="SDCountries" asp-action="Index">SDCountries</a>
+            </div>
+            <div class="right">
+                <a class="nav-link text-dark" asp-area="" asp-controller="SDInstruments" asp-action="Index">SDInstruments</a>
+            </div>
+            <div class="right">
+                <a class="nav-link text-dark" asp-area="" asp-controller="SDStyles" asp-action="Index">SDStyles</a>
+            </div>
+            <div class="right">
+                <a class="nav-link text-dark" asp-area="" asp-controller="SDArtist" asp-action="Index">SDArtist</a>
+            </div>
+            <div class="right">
+                <a class="nav-link text-dark" asp-area="" asp-controller="SDNameAddress" asp-action="Index">SDNameAddress</a>
+            </div>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

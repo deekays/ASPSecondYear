@@ -1,0 +1,40 @@
+﻿@using Microsoft.AspNetCore.Http
+
+@{
+    ViewData["Title"] = "Users in " + Context.Session.GetString("role");
+}
+
+<h1>Users in @Context.Session.GetString("role")</h1>
+
+<form asp-action="AddUser">
+    <select name="userId" class="form-control, col-md-7" asp-items="ViewBag.UsersNotInRole"></select><input type="submit" value="Add User to Role" />
+</form>
+
+
+<table class="table">
+    <tr>
+        <th>
+            User Name
+        </th>
+        <th>
+            Email
+        </th>
+        <th>
+
+        </th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @item.UserName
+            </td>
+            <td>
+                @item.Email
+            </td>
+            <td>
+                <a asp-action="RemoveUser" asp-route-id="@item.Id">Remove</a>
+            </td>
+        </tr>
+    }
+</table>

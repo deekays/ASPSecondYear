@@ -1,0 +1,59 @@
+﻿
+@{
+    ViewData["Title"] = "Role Maintenance";
+}
+
+<h1>Roles on File</h1>
+@if (User.IsInRole("administrators") || User.IsInRole("medicalStaff"))
+{
+<form method="POST" asp-action="Create" >
+    <input type="text" name="roleName" /><input type="submit" value="Add Role" />
+</form>
+}
+
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                ID
+            </th>
+            <th>
+                Name
+            </th>
+            <th>
+                Normalized Name
+            </th>
+            @if (User.IsInRole("administrators") || User.IsInRole("medicalStaff"))
+            {
+                <th></th>
+            }
+            </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @item.Id
+            </td>
+            <td>
+                <a asp-action="UserIndex" asp-route-roleName="@item.Name">@item.Name</a>
+            </td>
+            <td>
+                @item.NormalizedName
+            </td>
+            @if (User.IsInRole("administrators") || User.IsInRole("medicalStaff"))
+            {
+                <td>
+                    @if(item.Name != "administrators")
+                    {
+                        <a asp-action="DeleteRole" asp-route-name="@item.Name">Delete</a>
+                    }
+                </td>
+            }
+        </tr>
+        }
+    </tbody>
+</table>
